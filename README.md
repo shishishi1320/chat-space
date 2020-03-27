@@ -4,20 +4,20 @@
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
-- has_many :group through:  :users_groups
-
-## groupテーブル
+- has_many :groups through:  :users_groups
+- belongs_to :posts
+- has_many :users_groups
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|posts_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+
 ### Association
-- belongs_to :post
+- has_many :post
 - has_many :users: through:  :users_groups
+- has_many :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
@@ -32,8 +32,10 @@
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|body|stext|
+|image|string|
+|users_id|integer|null: false, foreign_key: true|
+|groups_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :groups
