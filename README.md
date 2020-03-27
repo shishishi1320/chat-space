@@ -25,8 +25,8 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belong_to :users
-- belong_to :groups
+- belongs_to :user
+- belongs_to :group
 
 
 ## postsテーブル
@@ -34,8 +34,8 @@
 |------|----|-------|
 |body|stext|
 |image|string|
-|users_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :groups
+- belongs_to :group
