@@ -4,7 +4,7 @@
       = current_user.name
     .group-icon
       .icon-edit
-        = link_to do
+        = link_to new_group_path do
           = icon('fas','edit',class: 'icon')
       .icon-cog
         = link_to edit_user_path(current_user) do
