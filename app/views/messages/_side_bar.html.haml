@@ -10,9 +10,12 @@
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'icon')
   .message
-    .teachcamp
-      teachchamp
-    .commnt
-      まだメッセージがありません
-  
-     
+    - current_user.groups.each do |group|
+      .teachcamp
+        = link_to group_messages_path(group) do
+          .group__group-name
+            = group.name
+          .group__latest-message
+            まだメッセージはありません
+      .commnt
+        まだメッセージがありません

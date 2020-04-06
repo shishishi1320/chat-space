@@ -1,34 +1,34 @@
 .mainchat
+  .messages
   .group-info
     .header-left
-      text
+      = @group.name
       .user-name
-        Menber : masa
+      - @group.users.each do |user|
+        = user.name
     .header-right
-      edit
+      = link_to edit_group_path(@group) do
+        edit
   .messeage-list
     .messeage-info
       masa
       .date
         2019/11/20(Wed)17:43:01
     .message-commt
-      おはよう!
+    = render @messages
     .next-post  
       .messeage-next-info
-        masa
         .next-date
-          2019/11/20(Wed)17:43:01 
+           
       .message-next-commt
-        今日は雨
+      
       
   .form
-    %form.new-message
-      .input-box
-        %input{type: "text",class: "input-box__text", placeholder: "type a message", }
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit"}
-           
-    
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
      
