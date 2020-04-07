@@ -87,6 +87,7 @@
    .messeage-list {
     background-color: #750101;
     height: calc(100vh - 190px);
+    overflow: scroll;
 
       .messeage-info {
         font-size: 16px;
