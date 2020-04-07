@@ -52,7 +52,6 @@ $('#new_message').on('submit', function(e){
    contentType: false
  })
   .done(function(data){
-    console.log(data)
     var html = buildHTML(data);
     $('.messeage-info').append(html);
     $('.messeage-info').animate({scrollTop: $('.messeage-info')[0].scrollHeight}, 'fast'); 
