@@ -11,18 +11,8 @@
         edit
   .messeage-list
     .messeage-info
-      masa
-      .date
-        2019/11/20(Wed)17:43:01
-    .message-commt
-    = render @messages
-    .next-post  
-      .messeage-next-info
-        .next-date
-           
-      .message-next-commt
-      
-      
+      = render @messages
+
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -30,5 +20,4 @@
         = f.label :image, class: 'form__mask__image' do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
-     
+        = f.submit 'Send', class: 'form__submit'
