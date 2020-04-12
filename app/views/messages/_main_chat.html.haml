@@ -6,9 +6,8 @@
       .user-name
       - @group.users.each do |user|
         = user.name
-    .header-right
-      = link_to edit_group_path(@group) do
-        edit
+    = link_to edit_group_path(@group), class:"header-right" do
+      Edit
   .messeage-list
     .messeage-info
       = render @messages

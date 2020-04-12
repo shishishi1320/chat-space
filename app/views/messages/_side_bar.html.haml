@@ -3,19 +3,16 @@
     .name
       = current_user.name
     .group-icon
-      .icon-edit
-        = link_to new_group_path do
-          = icon('fas','edit',class: 'icon')
-      .icon-cog
-        = link_to edit_user_path(current_user) do
-          = icon('fas', 'cog', class: 'icon')
+      = link_to new_group_path, class:"icon-edit" do
+        = icon('fas','edit',class: 'icon')
+      = link_to edit_user_path(current_user), class:"icon-cog" do
+        = icon('fas', 'cog', class: 'icon')
   .message
     - current_user.groups.each do |group|
-      .teachcamp
-        = link_to group_messages_path(group) do
-          .group__group-name
-            = group.name
-          .group__latest-message
-            まだメッセージはありません
-      .commnt
-        まだメッセージがありません
+      = link_to group_messages_path(group), class:"teachcamp" do
+        .group__group-name
+          = group.name
+        .group__latest-message
+          まだメッセージはありません
+    .commnt
+      まだメッセージがありません
