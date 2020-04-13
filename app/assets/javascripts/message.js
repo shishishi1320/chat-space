@@ -62,6 +62,7 @@ $('#new_message').on('submit', function(e){
   })
   return false;
   });
+
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id");
     $.ajax({
@@ -76,8 +77,8 @@ $('#new_message').on('submit', function(e){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.message-info').append(insertHTML);
-        $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
+        $('.messeage-info').append(insertHTML);
+        $('.messeage-list').animate({scrollTop: $('.messeage-list')[0].scrollHeight}, 'fast'); 
       }
     })
     .fail(function() {
