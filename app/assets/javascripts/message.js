@@ -76,7 +76,7 @@ $('#new_message').on('submit', function(e){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.messages').append(insertHTML);
+        $('.message-info').append(insertHTML);
         $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
       }
     })
