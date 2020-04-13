@@ -100,6 +100,7 @@
    .messeage-list {
     background-color: #fafafa;
     height: calc(100vh - 190px);
+    width: calc(100vw - 300px);
     padding: 46px 40px;
     overflow: scroll;
     display: flex;
@@ -147,6 +148,7 @@
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
+    width: calc(100vw - 300px);
     padding: 20px 50px 20px 40px;
     &__message {
       border: none;
